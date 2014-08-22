@@ -131,19 +131,7 @@ toc
 % Compute Predictions on the test set (testFeatures) using softmaxPredict
 % and softmaxModel
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+pred = softmaxPredict(softmaxModel, testFeatures);
 
 %% -----------------------------------------------------
 
