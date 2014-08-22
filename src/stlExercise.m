@@ -1,5 +1,8 @@
 %% CS294A/CS294W Self-taught Learning Exercise
 
+close all
+clear all
+
 %  Instructions
 %  ------------
 % 
@@ -31,9 +34,9 @@ maxIter = 400;
 %  change it.
 
 % Load MNIST database files
-mnistData   = loadMNISTImages('mnist/train-images-idx3-ubyte');
-mnistLabels = loadMNISTLabels('mnist/train-labels-idx1-ubyte');
-
+% mnistData   = loadMNISTImages('mnist/train-images-idx3-ubyte');
+% mnistLabels = loadMNISTLabels('mnist/train-labels-idx1-ubyte');
+[mnistData,mnistLabels] = get_mnist_data('train');
 % Set Unlabeled Set (All Images)
 
 % Simulate a Labeled and Unlabeled set
@@ -54,7 +57,7 @@ testLabels = mnistLabels(testSet)' + 1;   % Shift Labels to the Range 1-5
 
 % Output Some Statistics
 fprintf('# examples in unlabeled set: %d\n', size(unlabeledData, 2));
-fprintf('# examples in supervised training set: %d\n\n', size(trainData, 2));
+fprintf('# examples in supervised training set: %d\n', size(trainData, 2));
 fprintf('# examples in supervised testing set: %d\n\n', size(testData, 2));
 
 %% ======================================================================
