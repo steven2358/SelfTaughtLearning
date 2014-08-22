@@ -114,14 +114,12 @@ softmaxModel = struct;
 % You need to compute softmaxModel using softmaxTrain on trainFeatures and
 % trainLabels
 
-
-
-
-
-
-
-
-
+lambda = 1e-4;
+options.maxIter = 100;
+tic
+softmaxModel = softmaxTrain(hiddenSize, numLabels, lambda, ...
+                            trainFeatures, trainLabels, options);
+toc
 
 %% -----------------------------------------------------
 
